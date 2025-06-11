@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:latest
+    hostname: postgres 
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: reservations
+      POSTGRES_USER: kratiseis
+      POSTGRES_PASSWORD: 12309421230942123094212309421230942123094212309421230942123094212309421230942123094212309421230942
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: "500MB"
