@@ -29,10 +29,6 @@ Whether you’re a developer, contributor, or user, this project aims to provide
      ```bash
      ./mvnw package
      ```
-   - Or using Gradle:
-     ```bash
-     ./gradlew build
-     ```
 
 3. **Run the application:**
    ```bash
