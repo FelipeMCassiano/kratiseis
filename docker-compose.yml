@@ -1,4 +1,14 @@
 services:
+  api:
+    build: .
+    ports:
+      - 8080:8080
+    networks:
+      - default
+    environment:
+      DATABASE_URL: jdbc:postgresql://localhost:5432/reservations
+      DATABASE_USERNAME: kratiseis
+      DATABASE_PASSWORD: 1234
   postgres:
     image: postgres:latest
     hostname: postgres 
@@ -11,8 +21,14 @@ services:
       - "5432:5432"
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - default
     deploy:
       resources:
         limits:
           cpus: '1'
           memory: "500MB"
+networks:
+  default:
+    driver: bridge
+    name: kratiseis-network
