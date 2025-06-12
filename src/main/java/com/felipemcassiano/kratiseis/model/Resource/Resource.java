@@ -13,6 +13,11 @@ public class Resource {
 
     private String name;
 
+    public Resource() {}
+    public Resource(CreateResourceDTO dto) {
+        this.name = dto.name();
+    }
+
     @OneToMany(mappedBy = "resource")
     private List<Reservation> Reservations;
 

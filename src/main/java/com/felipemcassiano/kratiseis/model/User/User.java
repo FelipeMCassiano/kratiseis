@@ -9,9 +9,18 @@ import java.util.List;
 @Table(name = "users")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String username;
+
+    public User() {
+
+    }
+
+    public User(CreateUserDTO userDTO) {
+        this.username = userDTO.username();
+    }
 
     @OneToMany(mappedBy = "user")
     private List<Reservation> reservations;

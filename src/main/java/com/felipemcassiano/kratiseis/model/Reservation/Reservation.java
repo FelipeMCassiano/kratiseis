@@ -22,6 +22,13 @@ public class Reservation {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
 
+    public  Reservation() {
+    }
+    public Reservation(CreateReservationDTO dto) {
+        this.endTime = dto.endDate();
+        this.startTime = dto.startDate();
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -52,5 +59,13 @@ public class Reservation {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public void setResource(Resource resource) {
+        this.resource = resource;
+    }
+
+    public Resource getResource() {
+        return resource;
     }
 }
