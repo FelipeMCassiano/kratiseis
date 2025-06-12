@@ -6,7 +6,7 @@ services:
     networks:
       - default
     environment:
-      DATABASE_URL: jdbc:postgresql://localhost:5432/reservations
+      DATABASE_URL: jdbc:postgresql://postgres:5432/reservations
       DATABASE_USERNAME: kratiseis
       DATABASE_PASSWORD: 1234
   postgres:
