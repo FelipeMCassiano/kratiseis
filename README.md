@@ -13,7 +13,7 @@ Whether you’re a developer, contributor, or user, this project aims to provide
 ### Prerequisites
 
 - Java 21 or later
-- Maven or Gradle (for building from source)
+- Maven (for building from source)
 - Docker (optional, for containerization)
 
 ### Running Locally
